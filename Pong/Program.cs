@@ -9,19 +9,19 @@ namespace Pong
     {
         public static void Main(string[] args)
         {
-            //Field
+            //Spillefelt
             const int fieldLength = 50, fieldWidth = 15;
             const char fieldTile = '#';
             string line = string.Concat(Enumerable.Repeat(fieldTile, fieldLength));
 
-            //Rackets 
+            //Kethcers 
             const int racketLength = fieldWidth / 4;
             const char racketTile = '|';
 
             int leftRacketHeight = 0;
             int rightRacketHeight = 0;
 
-            //Ball
+            //Bold
             int ballX = fieldLength / 2;
             int ballY = fieldWidth / 2;
             const char ballTile = 'O';
@@ -39,14 +39,14 @@ namespace Pong
 
             while (true)
             {
-                //Print the borders
+                //Print spille-grænsen
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine(line);
 
                 Console.SetCursorPosition(0, fieldWidth);
                 Console.WriteLine(line);
 
-                //Print the rackets
+                //Print ketcherne
                 for (int i = 0; i < racketLength; i++)
                 {
                     Console.SetCursorPosition(0, i + 1 + leftRacketHeight);
@@ -55,17 +55,17 @@ namespace Pong
                     Console.WriteLine(racketTile);
                 }
 
-                //Do until a key is pressed
+                //Do until en tast er trykket
                 while (!Console.KeyAvailable)
                 {
                     Console.SetCursorPosition(ballX, ballY);
                     Console.WriteLine(ballTile);
-                    Thread.Sleep(100); //Adds a timer so that the players have time to react
+                    Thread.Sleep(100); //Tilføj en timer, så spillere kan reagere
 
                     Console.SetCursorPosition(ballX, ballY);
-                    Console.WriteLine(" "); //Clears the previous position of the ball
+                    Console.WriteLine(" "); //Clears den tidligere position af bolden
 
-                    //Update position of the ball
+                    //Update position af bolden
                     if (isBallGoingDown)
                     {
                         ballY++;
@@ -86,16 +86,16 @@ namespace Pong
 
                     if (ballY == 1 || ballY == fieldWidth - 1)
                     {
-                        isBallGoingDown = !isBallGoingDown; //Change direction
+                        isBallGoingDown = !isBallGoingDown; //Skift retning
                     }
 
                     if (ballX == 1)
                     {
-                        if (ballY >= leftRacketHeight + 1 && ballY <= leftRacketHeight + racketLength) //Left racket hits the ball and it bounces
+                        if (ballY >= leftRacketHeight + 1 && ballY <= leftRacketHeight + racketLength) //Bolden rammer venstre ketcher og rammer bolden
                         {
                             isBallGoingRight = !isBallGoingRight;
                         }
-                        else //Ball goes out of the field; Right player scores
+                        else //Bolden ryger ud af banen, og højre spiller score
                         {
                             rightPlayerPoints++;
                             ballY = fieldWidth / 2;
@@ -111,11 +111,11 @@ namespace Pong
 
                     if (ballX == fieldLength - 2)
                     {
-                        if (ballY >= rightRacketHeight + 1 && ballY <= rightRacketHeight + racketLength) //Right racket hits the ball and it bounces
+                        if (ballY >= rightRacketHeight + 1 && ballY <= rightRacketHeight + racketLength) //Bolden rammer højre ketcher og ændre retning
                         {
                             isBallGoingRight = !isBallGoingRight;
                         }
-                        else //Ball goes out of the field; Left player scores
+                        else //Bolden ryger ud af banen, og venstre score.
                         {
                             leftPlayerPoints++;
                             ballY = fieldWidth / 2;
@@ -130,7 +130,7 @@ namespace Pong
                     }
                 }
 
-                //Check which key has been pressed
+                //Checker hvilken tast bliver trykket
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.UpArrow:
@@ -162,7 +162,7 @@ namespace Pong
                         break;
                 }
 
-                //Clear the rackets’ previous positions
+                //Clear ketcherens tidligere position
                 for (int i = 1; i < fieldWidth; i++)
                 {
                     Console.SetCursorPosition(0, i);
