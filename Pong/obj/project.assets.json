@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\Pong\\Pong\\Pong.csproj",
+      "projectUniqueName": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\pong\\Pong.csproj",
       "projectName": "Pong",
-      "projectPath": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\Pong\\Pong\\Pong.csproj",
+      "projectPath": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\pong\\Pong.csproj",
       "packagesPath": "C:\\Users\\jonas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\Pong\\Pong\\obj\\",
+      "outputPath": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\pong\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,7 +51,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -72,7 +73,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
