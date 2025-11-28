@@ -8,19 +8,21 @@ namespace Pong
     {
         public static void Main(string[] args)
         {
-            //Field
+            ShowStartScreen();
+
+            //Bane
             const int fieldLength = 50, fieldWidth = 15;
             const char fieldTile = '#';
             string line = string.Concat(Enumerable.Repeat(fieldTile, fieldLength));
 
-            //Rackets 
+            //Ketcher
             const int racketLength = fieldWidth / 4;
             const char racketTile = '|';
 
             int leftRacketHeight = 0;
             int rightRacketHeight = 0;
 
-            //Ball
+            //Bold
             int ballX = fieldLength / 2;
             int ballY = fieldWidth / 2;
             const char ballTile = 'O';
@@ -43,84 +45,75 @@ namespace Pong
             int leftNameX = 0;
             int rightNameX = fieldLength - rightPlayerName.Length;
 
+
             while (true)
             {
-                //Print the borders
+                Console.Clear();
+                Console.CursorVisible = false;
+
+                //Print spillets bane-grænser
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine(line);
 
                 Console.SetCursorPosition(0, fieldWidth);
                 Console.WriteLine(line);
 
-                //Print the rackets
-                for (int i = 0; i < racketLength; i++)
-                {
-                    Console.SetCursorPosition(0, i + 1 + leftRacketHeight);
-                    Console.Write(racketTile);
-                    Console.SetCursorPosition(fieldLength - 1, i + 1 + rightRacketHeight);
-                    Console.Write(racketTile);
-                }
-
-                Console.SetCursorPosition(0, scoreboardY);
-                Console.Write(leftPlayerName);
-                Console.SetCursorPosition(fieldLength - 2, scoreboardY);
-                Console.Write(rightPlayerName);
-
-                //Do until a key is pressed
+                //Gør indtil en tast er trykket
                 while (!Console.KeyAvailable)
                 {
+
+                    //Print Ketchers
+                    for (int i = 0; i < racketLength; i++)
+                    {
+                        Console.SetCursorPosition(0, 1 + leftRacketHeight + i);
+                        Console.Write(racketTile);
+                        Console.SetCursorPosition(fieldLength - 1, 1 + rightRacketHeight + i);
+                        Console.Write(racketTile);
+                    }
+
+                    // Visable Scoreboard
+                    Console.SetCursorPosition(scoreboardX, scoreboardY);
+                    Console.WriteLine($"{leftPlayerPoints} | {rightPlayerPoints}");
+
+                    // Spillernavne
+                    Console.SetCursorPosition(0, scoreboardY);
+                    Console.Write(leftPlayerName);
+                    Console.SetCursorPosition(fieldLength - 2, scoreboardY);
+                    Console.Write(rightPlayerName);
+
+
+                    // Tegn bold
                     Console.SetCursorPosition(ballX, ballY);
                     Console.Write(ballTile);
-                    Thread.Sleep(100); //Adds a timer so that the players have time to react
+                    Thread.Sleep(100); //Tilføj en timer, så spillerne kan reagere.
 
+
+                    // Clear bolden for tidligere position
                     Console.SetCursorPosition(ballX, ballY);
-                    Console.Write(" "); //Clears the previous position of the ball
+                    Console.Write(" ");
 
-                    //Update position of the ball
-                    if (isBallGoingDown)
-                    {
-                        ballY++;
-                    }
-                    else
-                    {
-                        ballY--;
-                    }
+                    //Opdater position af bolden
+                    ballY += isBallGoingDown ? 1 : -1;
+                    ballX += isBallGoingRight ? 1 : -1;
 
-                    if (isBallGoingRight)
-                    {
-                        ballX++;
-                    }
-                    else
-                    {
-                        ballX--;
-                    }
-
+                    // Hoppe Top/Bund
                     if (ballY == 1 || ballY == fieldWidth - 1)
                     {
-                        isBallGoingDown = !isBallGoingDown; //Change direction
+                        isBallGoingDown = !isBallGoingDown; 
                     }
 
+                    // Venstre væg
                     if (ballX == 1)
                     {
-                        if (ballY >= leftRacketHeight + 1 && ballY <= leftRacketHeight + racketLength) //Left racket hits the ball and it bounces
+                        if (ballY >= leftRacketHeight + 1 && ballY <= leftRacketHeight + racketLength) //Venstre Ketcher rammer bolden, og den ryger bagud
                         {
-                            isBallGoingRight = !isBallGoingRight;
+                            isBallGoingRight = true;
                         }
-                        else //Ball goes out of the field; Right player scores
+                        else //Bolden ryger af banen, og højre spiller score
                         {
                             rightPlayerPoints++;
                             ballY = fieldWidth / 2;
                             ballX = fieldLength / 2;
-                            Console.SetCursorPosition(scoreboardX, scoreboardY);
-                            Console.WriteLine($"{leftPlayerPoints} | {rightPlayerPoints}");
-
-                            // Venstre spiller navn
-                            Console.SetCursorPosition(leftNameX, scoreboardY);
-                            Console.Write(leftPlayerName);
-
-                            // Højre spiller navn
-                            Console.SetCursorPosition(rightNameX, scoreboardY);
-                            Console.Write(rightPlayerName);
 
                             if (rightPlayerPoints == 5)
                             {
@@ -129,27 +122,18 @@ namespace Pong
                         }
                     }
 
+                    // Højre væg
                     if (ballX == fieldLength - 2)
                     {
-                        if (ballY >= rightRacketHeight + 1 && ballY <= rightRacketHeight + racketLength) //Right racket hits the ball and it bounces
+                        if (ballY >= rightRacketHeight + 1 && ballY <= rightRacketHeight + racketLength) //Højre Ketcher rammer bolden, og den ryger bagud
                         {
-                            isBallGoingRight = !isBallGoingRight;
+                            isBallGoingRight = false;
                         }
-                        else //Ball goes out of the field; Left player scores
+                        else //Bolden ryger af banen, Venstre spiller score.
                         {
                             leftPlayerPoints++;
                             ballY = fieldWidth / 2;
                             ballX = fieldLength / 2;
-                            Console.SetCursorPosition(scoreboardX, scoreboardY);
-                            Console.WriteLine($"{leftPlayerPoints} | {rightPlayerPoints}");
-
-                            // Venstre spiller navn
-                            Console.SetCursorPosition(leftNameX, scoreboardY);
-                            Console.Write(leftPlayerName);
-
-                            // Højre spiller navn
-                            Console.SetCursorPosition(rightNameX, scoreboardY);
-                            Console.Write(rightPlayerName);
 
                             if (leftPlayerPoints == 5)
                             {
@@ -159,46 +143,18 @@ namespace Pong
                     }
                 }
 
-                //Check which key has been pressed
-                switch (Console.ReadKey(true).Key)
-                {
-                    case ConsoleKey.UpArrow:
-                        if (rightRacketHeight > 0)
-                        {
-                            rightRacketHeight--;
-                        }
-                        break;
+                //Ketcher kontrols
+                ConsoleKey key = Console.ReadKey(true).Key;
+                
+                if (key == ConsoleKey.W && leftRacketHeight > 0)
+                    leftRacketHeight--;
+                else if (key == ConsoleKey.S && leftRacketHeight < fieldWidth - racketLength - 1)
+                    leftRacketHeight++;
 
-                    case ConsoleKey.DownArrow:
-                        if (rightRacketHeight < fieldWidth - racketLength - 1)
-                        {
-                            rightRacketHeight++;
-                        }
-                        break;
-
-                    case ConsoleKey.W:
-                        if (leftRacketHeight > 0)
-                        {
-                            leftRacketHeight--;
-                        }
-                        break;
-
-                    case ConsoleKey.S:
-                        if (leftRacketHeight < fieldWidth - racketLength - 1)
-                        {
-                            leftRacketHeight++;
-                        }
-                        break;
-                }
-
-                //Clear the rackets’ previous positions
-                for (int i = 1; i < fieldWidth; i++)
-                {
-                    Console.SetCursorPosition(0, i);
-                    Console.Write(" ");
-                    Console.SetCursorPosition(fieldLength - 1, i);
-                    Console.Write(" ");
-                }
+                if (key == ConsoleKey.UpArrow && rightRacketHeight > 0)
+                    rightRacketHeight--;
+                else if (key == ConsoleKey.DownArrow && rightRacketHeight < fieldWidth - racketLength - 1)
+                    rightRacketHeight++;
             }
         outer:;
             Console.Clear();
@@ -209,9 +165,8 @@ namespace Pong
             int screenHeight = 15;
             string horizontalBorder = new string('#', screenWidth);
 
-            Console.ForegroundColor = ConsoleColor.White;
-
             // Top og bund
+            Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(0, 0);
             Console.WriteLine(horizontalBorder);
 
@@ -239,10 +194,53 @@ namespace Pong
             // Nulstil farver
             Console.ResetColor();
 
-            // Vent på Enter
+            // Vent på tryk af Enter
             while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
 
 
         }
+
+        static void ShowStartScreen()
+        {
+            Console.Clear();
+            Console.CursorVisible = false;
+
+            int screenWidth = 50;
+            int screenHeight = 15;
+            string border = new string('#', screenWidth);
+
+            // Top border
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine(border);
+
+            // Bottom border
+            Console.SetCursorPosition(0, screenHeight);
+            Console.WriteLine(border);
+
+            // Titel
+            string title = " PONG ";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition((screenWidth - title.Length) / 2, screenHeight / 2 - 3);
+            Console.WriteLine(title);
+
+            // Undertekst
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            string subtitle = "P1: W/S   |   P2: ↑/↓";
+            Console.SetCursorPosition((screenWidth - subtitle.Length) / 2, screenHeight / 2 - 1);
+            Console.WriteLine(subtitle);
+
+            // Start prompt
+            Console.ForegroundColor = ConsoleColor.Gray;
+            string prompt = "Tryk ENTER for at starte";
+            Console.SetCursorPosition((screenWidth - prompt.Length) / 2, screenHeight / 2 + 2);
+            Console.WriteLine(prompt);
+
+            Console.ResetColor();
+
+            // Vent på Enter
+            while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
+        }
+
     }
 }
