@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
 namespace Pong
 {
+
     public class Program
     {
+
         public static void Main(string[] args)
         {
             int winnerScore = 5; // Scoren for at vinde
@@ -13,15 +16,15 @@ namespace Pong
             Screens.ShowStartScreen();
 
             // Setup objecter
-            GameField field = new GameField(50, 15, '#');
-            Racket leftRacket = new Racket(0, field.Height / 4, '|');
-            Racket rightRacket = new Racket(field.Width - 1, field.Height / 4, '|');
+            GameField field = new GameField(50, 15, '#', 10);
+            Racket leftRacket = new Racket(field.OffsetX + 1, field.Height / 4, '|', ConsoleColor.Blue);
+            Racket rightRacket = new Racket(field.OffsetX + field.Width - 2, field.Height / 4, '|', ConsoleColor.Red);
 
             // Start på midten af banen
             leftRacket.Height = field.Height / 2 - leftRacket.Length / 2;
             rightRacket.Height = field.Height / 2 - rightRacket.Length / 2;
 
-            Ball ball = new Ball(field.Width / 2, field.Height / 2, 'O');
+            Ball ball = new Ball(field.OffsetX + field.Width / 2, field.Height / 2, 'O');
             Scoreboard sb = new Scoreboard(field.Width, field.Height + 1);
 
             // Spil loop
@@ -38,6 +41,7 @@ namespace Pong
                 sb.Draw();
                 ball.Draw();
 
+                // Timer på hurtighed af spil
                 Thread.Sleep(100);
 
                 // Ryd bold og flyt den
@@ -49,9 +53,9 @@ namespace Pong
                     ball.GoingDown = !ball.GoingDown;
 
                 // Venstre side
-                if (ball.X <= leftRacket.X + 1)
+                if (ball.X == leftRacket.X)
                 {
-                    if (ball.Y >= leftRacket.Height + 1 && ball.Y <= leftRacket.Height + leftRacket.Length)
+                    if (ball.Y >= leftRacket.Height && ball.Y <= leftRacket.Height + leftRacket.Length - 1)
                         ball.GoingRight = true;
                     else
                     {
@@ -60,10 +64,11 @@ namespace Pong
                     }
                 }
 
+
                 // Højre side
-                if (ball.X >= rightRacket.X - 1)
+                if (ball.X == rightRacket.X)
                 {
-                    if (ball.Y >= rightRacket.Height + 1 && ball.Y <= rightRacket.Height + rightRacket.Length)
+                    if (ball.Y >= rightRacket.Height && ball.Y <= rightRacket.Height + rightRacket.Length - 1)
                         ball.GoingRight = false;
                     else
                     {
@@ -71,6 +76,8 @@ namespace Pong
                         ball.Reset(field.Width / 2, field.Height / 2);
                     }
                 }
+               
+
 
                 //Ketcher kontrols
                 if (Console.KeyAvailable)

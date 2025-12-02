@@ -6,12 +6,15 @@ namespace Pong
         public int Length { get; }
         public int X { get; }
         public char Tile { get; }
+        public ConsoleColor Color { get; }
 
-        public Racket(int x, int length, char tile)
+
+        public Racket(int x, int length, char tile, ConsoleColor color)
         {
             X = x;
             Tile = tile;
             Length = length;
+            Color = color;
         }
 
         public void MoveUp()
@@ -27,11 +30,13 @@ namespace Pong
 
         public void Draw()
         {
+            Console.ForegroundColor = Color;
             for (int i = 0; i < Length; i++)
             {
                 Console.SetCursorPosition(X, Height + i);
                 Console.WriteLine(Tile);
             }
+            Console.ResetColor();
         }
 
         public void Clear(int fieldHeight)

@@ -18,18 +18,23 @@ namespace Pong
 			Y = y;
 		}
 
-		public void Draw()
+		public void Draw(int offsetX = 10)
 		{
 			//spiller point under spillet
-			Console.SetCursorPosition(X, Y);
+			Console.SetCursorPosition(X + offsetX, Y);
 			Console.Write($"{LeftPoints} | {RightPoints}");
 
 			// Spillernavne
-			Console.SetCursorPosition(0, Y);
+			Console.ForegroundColor = ConsoleColor.Blue;
+            Console.SetCursorPosition(0 + offsetX, Y);
 			Console.Write(LeftName);
 
-			Console.SetCursorPosition(FieldLength - RightName.Length, Y);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.SetCursorPosition(FieldLength - RightName.Length + offsetX, Y);
 			Console.Write(RightName);
-		}
+
+            Console.ResetColor();
+        }
 	}
+
 }
