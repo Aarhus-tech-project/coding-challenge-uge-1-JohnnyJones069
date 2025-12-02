@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Pong"
+    "\\Pong",
+    "\\Pong\\bin\\Debug",
+    "\\Pong\\obj\\Debug"
   ],
-  "SelectedNode": "\\Pong\\GameField.cs",
+  "SelectedNode": "\\Pong\\obj",
   "PreviewInSolutionExplorer": false
 }
