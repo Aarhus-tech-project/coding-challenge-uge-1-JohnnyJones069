@@ -5,17 +5,19 @@ namespace Pong
 		public int LeftPoints = 0;
 		public int RightPoints = 0;
 
-		public string LeftName = "P1";
-		public string RightName = "P2";
+		public string LeftName { get; }
+		public string RightName { get; }
 
 		public int X, Y;
 		public int FieldLength;
 
-		public Scoreboard(int fieldLength, int y)
+		public Scoreboard(int fieldLength, int y, string leftname, string rightname)
 		{
 			FieldLength = fieldLength;
 			X = fieldLength / 2 - 2;
 			Y = y;
+			LeftName = leftname;
+			RightName = rightname;
 		}
 
 		public void Draw(int offsetX = 10)

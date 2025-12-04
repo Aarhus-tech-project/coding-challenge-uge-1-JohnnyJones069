@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Pong",
-    "\\Pong\\bin\\Debug",
-    "\\Pong\\obj\\Debug"
+    "\\Pong"
   ],
-  "SelectedNode": "\\Pong\\obj",
+  "SelectedNode": "\\Pong\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

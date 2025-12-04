@@ -13,7 +13,7 @@ namespace Pong
         {
             int winnerScore = 5; // Scoren for at vinde
 
-            Screens.ShowStartScreen();
+            var (p1, p2) = Screens.ShowStartScreen();
 
             // Setup objecter
             GameField field = new GameField(50, 15, '#', 10);
@@ -25,7 +25,7 @@ namespace Pong
             rightRacket.Height = field.Height / 2 - rightRacket.Length / 2;
 
             Ball ball = new Ball(field.OffsetX + field.Width / 2, field.Height / 2, 'O');
-            Scoreboard sb = new Scoreboard(field.Width, field.Height + 1);
+            Scoreboard sb = new Scoreboard(field.Width, field.Height + 1, p1, p2);
 
             // Spil loop
             while (true)
@@ -99,7 +99,10 @@ namespace Pong
             }
 
             // GAME-OVER skærm
-            Screens.ShowGameOverScreen(sb.LeftPoints, sb.RightPoints);
+            Screens.ShowGameOverScreen(sb.LeftPoints, sb.RightPoints, p1, p2);
+
+            //Final Scoreboard
+            //LeaderBoard.LeaderboardScreen();
         }
 
 
