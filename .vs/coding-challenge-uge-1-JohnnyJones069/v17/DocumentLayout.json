@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\LeaderBoard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\LeaderBoard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Screens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\Screens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Scoreboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\Scoreboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\Racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\LeaderBoard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\LeaderBoard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Scoreboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\Scoreboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\GameField.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\Ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pong\\Racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Racket.cs",
               "DocumentMoniker": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Racket.cs",
               "RelativeDocumentMoniker": "Pong\\Racket.cs",
@@ -56,13 +56,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Screens.cs",
               "DocumentMoniker": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Screens.cs",
               "RelativeDocumentMoniker": "Pong\\Screens.cs",
               "ToolTip": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Screens.cs",
               "RelativeToolTip": "Pong\\Screens.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T09:23:53.09Z",
               "IsPinned": true,
@@ -70,20 +70,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "LeaderBoard.cs",
               "DocumentMoniker": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\LeaderBoard.cs",
               "RelativeDocumentMoniker": "Pong\\LeaderBoard.cs",
               "ToolTip": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\LeaderBoard.cs",
               "RelativeToolTip": "Pong\\LeaderBoard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T11:46:25.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T11:46:25.748Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GameField.cs",
               "DocumentMoniker": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\GameField.cs",
               "RelativeDocumentMoniker": "Pong\\GameField.cs",
@@ -96,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Ball.cs",
               "DocumentMoniker": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Ball.cs",
               "RelativeDocumentMoniker": "Pong\\Ball.cs",
@@ -104,12 +102,11 @@
               "RelativeToolTip": "Pong\\Ball.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T09:58:15.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T09:58:15.759Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Scoreboard.cs",
               "DocumentMoniker": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Scoreboard.cs",
               "RelativeDocumentMoniker": "Pong\\Scoreboard.cs",
@@ -128,7 +125,7 @@
               "RelativeDocumentMoniker": "Pong\\Program.cs",
               "ToolTip": "C:\\Users\\jonas\\Documents\\Aarhus Tech Doc\\H1\\Kode\\coding-challenge-uge-1-JohnnyJones069\\Pong\\Program.cs",
               "RelativeToolTip": "Pong\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAmwD0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T08:59:26.599Z",
               "EditorCaption": ""

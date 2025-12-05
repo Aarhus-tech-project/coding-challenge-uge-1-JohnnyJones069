@@ -61,7 +61,6 @@
             return (P1, P2); 
         }
 
-
         public static void  ShowGameOverScreen(int left, int right, string P1, string P2, int offsetX = 10)
 		{
 			Console.Clear();
@@ -104,5 +103,54 @@
 			// Vent på tryk af Enter
 			while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
 		}
-	}
+
+        public static bool ShowLeaderBoardScreen(int offsetX = 10)
+        {
+            Console.Clear();
+            Console.CursorVisible = false;
+
+            int screenWidth = 50;
+            int screenHeight = 15;
+            string horizontalBorder = new string('#', screenWidth);
+
+            // Top og bund
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.SetCursorPosition(offsetX, 0);
+            Console.WriteLine(horizontalBorder);
+
+            Console.SetCursorPosition(offsetX, screenHeight);
+            Console.WriteLine(horizontalBorder);
+
+            // Tekster
+            string tryAgainText = "Vil du spille igen?";
+            string pressEsc = "Esc = Afslut";
+            string pressEnter = "Enter = Spil igen";
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.SetCursorPosition(offsetX + 2, screenHeight / 2 - 1);
+            Console.WriteLine(tryAgainText);
+
+            Console.SetCursorPosition(offsetX + 2, screenHeight / 2 + 1);
+            Console.WriteLine(pressEnter);
+
+            Console.SetCursorPosition(offsetX + 2, screenHeight / 2 + 2);
+            Console.WriteLine(pressEsc);
+
+            Console.ResetColor();
+
+            // Vent på Enter eller Esc
+            while (true)
+            {
+                var input = Console.ReadKey(true).Key;
+
+                switch (input)
+                {
+                    case ConsoleKey.Enter:
+                        return true;     // Spil igen
+                    case ConsoleKey.Escape:
+                        return false;    // Afslut
+                }
+            }
+        }
+    }
 }
